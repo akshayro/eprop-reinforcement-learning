@@ -76,7 +76,9 @@ def sac(env_name, actor_critic_function, hidden_size,
 
     for t in range(total_steps):
         if t > 50000:
-            env.render()
+            # env.render()
+            # AKSHAY: commented this out so I can train on Google Colab
+            print('Not rendering, on Google Colab')
         if t > start_steps:
             obs_tens = torch.from_numpy(obs).float().reshape(1,-1)
             _, act, _ = actor_critic.get_action(obs_tens)
@@ -146,6 +148,8 @@ def sac(env_name, actor_critic_function, hidden_size,
             logger.log_tabular('LossV', average_only=True)
             logger.log_tabular('Time', time.time()-start_time)
             logger.dump_tabular()
+
+            # Save state dict
 
 
 if __name__ == '__main__':

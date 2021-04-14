@@ -5,6 +5,7 @@ import torch.nn.functional as F
 
 import gym, time
 import numpy as np
+import matplotlib.pyplot as plt
 
 from utils import EpochLogger, setup_logger_kwargs
 from core import actor_critic as ac
@@ -45,11 +46,11 @@ class ReplayBuffer:
 def sac(env_name, actor_critic_function, hidden_size,
         steps_per_epoch=5000, epochs=100, replay_size=int(1e6), gamma=0.99, 
         polyak=0.995, lr=1e-3, alpha=0.2, batch_size=100, start_steps=10000, 
-        max_ep_len=1000, logger_kwargs=dict()):
+        max_ep_len=1000, logger_kwargs=dict(), save_freq=10):
 
     logger = EpochLogger(**logger_kwargs)
     logger.save_config(locals())
-    
+
 
     replay_buffer = ReplayBuffer(replay_size)
 
@@ -69,10 +70,16 @@ def sac(env_name, actor_critic_function, hidden_size,
     ], lr)
     policy_optimizer = optim.Adam(actor_critic.policy.parameters(), lr)
 
+    # Setup model saving
+    logger.setup_pytorch_saver(actor_critic)
+
     start_time = time.time()
 
     obs, ret, done, ep_ret, ep_len = env.reset(), 0, False, 0, 0
     total_steps = steps_per_epoch * epochs
+
+    total_ret = 0
+    rewards_list = []
 
     for t in range(total_steps):
         if t > 50000:
@@ -86,7 +93,9 @@ def sac(env_name, actor_critic_function, hidden_size,
 
         obs2, ret, done, _ = env.step(act)
 
+        total_ret += ret
         ep_ret += ret
+        rewards_list.append(total_ret)
         ep_len += 1
 
         done = False if ep_len==max_ep_len else done
@@ -130,6 +139,9 @@ def sac(env_name, actor_critic_function, hidden_size,
 
         if t > 0 and t % steps_per_epoch == 0:
             epoch = t // steps_per_epoch
+            # Save model
+            if (epoch % save_freq == 0) or (epoch == epochs-1):
+                logger.save_state({'env': env}, None)
 
             # test_agent()
             logger.log_tabular('Epoch', epoch)
@@ -146,6 +158,11 @@ def sac(env_name, actor_critic_function, hidden_size,
             logger.log_tabular('LossV', average_only=True)
             logger.log_tabular('Time', time.time()-start_time)
             logger.dump_tabular()
+    plt.plot(rewards_list)
+    plt.xlabel('steps', size=12)
+    plt.ylabel('return', size=12)
+    plt.savefig('sac_ant_img.png')
+    plt.show()
 
 
 if __name__ == '__main__':
@@ -165,3 +182,5 @@ if __name__ == '__main__':
     sac(args.env, actor_critic_function=ac,
         hidden_size=[args.hid]*args.l, gamma=args.gamma, epochs=args.epochs,
         logger_kwargs=logger_kwargs)
+
+

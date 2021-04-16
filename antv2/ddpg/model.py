@@ -45,7 +45,7 @@ class ReplayBuffer:
 def ddpg(env_name, actor_critic_function, hidden_size,
         steps_per_epoch=5000, epochs=100, replay_size=int(1e6), gamma=0.99, 
         polyak=0.995, pi_lr=1e-3, q_lr=1e-3, batch_size=100, start_steps=10000, 
-        act_noise=0.1, max_ep_len=1000, logger_kwargs=dict()):
+        act_noise=0.1, max_ep_len=1000, logger_kwargs=dict(), save_freq=10):
 
     logger = EpochLogger(**logger_kwargs)
     logger.save_config(locals())
@@ -63,6 +63,9 @@ def ddpg(env_name, actor_critic_function, hidden_size,
 
     q_optimizer = optim.Adam(actor_critic.q.parameters(), q_lr)
     policy_optimizer = optim.Adam(actor_critic.policy.parameters(), pi_lr)
+
+    # Setup model saving
+    logger.setup_pytorch_saver(actor_critic)
 
     start_time = time.time()
 
@@ -121,6 +124,9 @@ def ddpg(env_name, actor_critic_function, hidden_size,
 
         if t > 0 and t % steps_per_epoch == 0:
             epoch = t // steps_per_epoch
+            # Save model
+            if (epoch % save_freq == 0) or (epoch == epochs-1):
+                logger.save_state({'env': env}, None)
 
             # test_agent()
             logger.log_tabular('Epoch', epoch)

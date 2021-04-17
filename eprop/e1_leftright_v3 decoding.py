@@ -103,11 +103,11 @@ for epoch in range(n_epochs): # 100
         dw1_past = 0.9*dw1_past + np.mean(dw1,0) #!!! momentum=0.9
         dw2_past = 0.9*dw2_past + np.mean(dw2,0) #!!! momentum=0.9
         dwr_past = 0.9*dwr_past + np.mean(dwr,0) #!!! momentum=0.9
-        dbias_past = 0.9*dbias_past + np.mean(dbias,0) #!!! momentum=0.9 #AKSHAY
+        # dbias_past = 0.9*dbias_past + np.mean(dbias,0) #!!! momentum=0.9 #AKSHAY
         w1 += dw1_past # input-->hidden update
         w2 += dw2_past # hidden-->hidden update
         wr += dwr_past # hidden-->output update
-        bias += dbias_past # bias update #AKSHAY
+        # bias += dbias_past # bias update #AKSHAY
         
         # w1 += np.mean(dw1,0) # these are for no-momentum update (slow learning)
         # w2 += np.mean(dw2,0)

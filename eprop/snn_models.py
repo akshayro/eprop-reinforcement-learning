@@ -85,7 +85,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
                 dw2[b] += -lr*eps_jkv.reshape(-1,1)*del_y.reshape(1,-1)
                 
                 # (4) bias update
-                dbias[b] += -lr*del_y #AKSHAY
+                # dbias[b] += -lr*del_y 
                 
                 loss[b] += -np.sum(target_1hot[b,t]*np.log(pi+1e-10)) # cross entropy
             z_counts[z_counts>=1] = z_counts[z_counts>=1]-1 # spike count decay

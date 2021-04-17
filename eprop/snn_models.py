@@ -15,7 +15,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
     dw2 = np.zeros((batch_size, nb_hidden, nb_outputs)) # hidden->output weight change
     dbias = np.zeros((batch_size, nb_outputs)) # bias change
     loss = np.zeros((batch_size)) # loss value
-    for b in nb.prange(batch_size): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    for b in nb.prange(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
         z_bool = np.zeros((nb_hidden,),dtype=nb.boolean) # spike or not (True or False)

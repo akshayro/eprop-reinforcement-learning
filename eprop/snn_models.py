@@ -1,9 +1,6 @@
 import numpy as np
 import numba as nb
 
-
-
-
 #%% lif eprop
 @nb.jit(nopython=True, parallel=True)
 def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):

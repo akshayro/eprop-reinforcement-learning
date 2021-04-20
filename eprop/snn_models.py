@@ -55,7 +55,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
             v = v_new 
             
             # output update (t)
-            y_new = kappa*y + np.dot(z,w2) #!!! + bias
+            y_new = kappa*y + np.dot(z,w2) + bias  #!!! + bias
             y = y_new 
             
             # eligibility trace for eij (t)
@@ -86,7 +86,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
                 dw2[b] += -lr*eps_jkv.reshape(-1,1)*del_y.reshape(1,-1)
                 
                 # (4) bias update
-                # dbias[b] += -lr*del_y 
+                dbias[b] += -lr*del_y 
                 
                 loss[b] += -np.sum(target_1hot[b,t]*np.log(pi+1e-10)) # cross entropy
             z_counts[z_counts>=1] = z_counts[z_counts>=1]-1 # spike count decay

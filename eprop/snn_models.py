@@ -67,7 +67,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
             epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             
-            # eiligibility trace for eij for outpit (t)
+            # eiligibility trace for eij for output (t)
             eps_jkv = kappa*eps_jkv + z
             
             # when learning cue is on, and weight update

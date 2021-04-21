@@ -154,7 +154,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             eij = eps_ijv*phi_j.reshape(1,-1) - beta*eps_ija*phi_j.reshape(1,-1) #!!! faster than using "outer" function
             
             # eligibility trace for eij for input->output (t)
-            # print(input_data[b,t])
+            print(input_data[b,t])
             epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             

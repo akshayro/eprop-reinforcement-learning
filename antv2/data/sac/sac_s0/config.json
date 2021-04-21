@@ -1,0 +1,38 @@
+{
+    "actor_critic_function":	"actor_critic",
+    "alpha":	0.2,
+    "batch_size":	100,
+    "env_name":	"Pendulum-v0",
+    "epochs":	50,
+    "exp_name":	"sac",
+    "gamma":	0.99,
+    "hidden_size":	[
+        300
+    ],
+    "logger":	{
+        "<utils.EpochLogger object at 0x7fdd9d58b400>":	{
+            "epoch_dict":	{},
+            "exp_name":	"sac",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"/Users/himaeda/OneDrive/Michigan/MIDAS/EECS545/project/eprop-reinforcement-learning/antv2/data/sac/sac_s0",
+            "output_file":	{
+                "<_io.TextIOWrapper name='/Users/himaeda/OneDrive/Michigan/MIDAS/EECS545/project/eprop-reinforcement-learning/antv2/data/sac/sac_s0/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"sac",
+        "output_dir":	"/Users/himaeda/OneDrive/Michigan/MIDAS/EECS545/project/eprop-reinforcement-learning/antv2/data/sac/sac_s0"
+    },
+    "lr":	0.001,
+    "max_ep_len":	1000,
+    "polyak":	0.995,
+    "replay_size":	1000000,
+    "save_freq":	10,
+    "start_steps":	10000,
+    "steps_per_epoch":	5000
+}

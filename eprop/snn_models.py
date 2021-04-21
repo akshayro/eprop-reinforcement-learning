@@ -95,21 +95,22 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
 
 
 @nb.jit(nopython=True, parallel=True)
-def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,cue_on,decays):
+def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     # regression version (see supp info P.17)
-    batch_size,nb_steps,nb_inputs = input_data.shape
+    nb_batch,nb_steps,nb_inputs = input_data.shape
     nb_hidden,nb_outputs = w2.shape
     lr,thr,alpha,beta,kappa,rho,t_ref = decays[0], decays[1], decays[2], decays[3], decays[4], decays[5], decays[6] # get params
-    out_rec = np.zeros((batch_size, nb_steps, nb_outputs)) # output record
-    v_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden v record
-    z_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden z record
-    a_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden a record
-    dw1 = np.zeros((batch_size, nb_inputs, nb_hidden)) # input->hidden weight change
-    dwr = np.zeros((batch_size, nb_hidden, nb_hidden)) # hidden weight change
-    dw2 = np.zeros((batch_size, nb_hidden, nb_outputs)) # hidden->output weight change
-    dbias = np.zeros((batch_size, nb_outputs)) # bias change
-    loss = np.zeros((batch_size)) # loss value
-    for b in nb.prange(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    out_rec = np.zeros((nb_batch, nb_steps, nb_outputs)) # output record
+    v_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden v record
+    z_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden z record
+    a_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden a record
+    dw1 = np.zeros((nb_batch, nb_inputs, nb_hidden)) # input->hidden weight change
+    dwr = np.zeros((nb_batch, nb_hidden, nb_hidden)) # hidden weight change
+    dw2 = np.zeros((nb_batch, nb_hidden, nb_outputs)) # hidden->output weight change
+    dbias = np.zeros((nb_batch, nb_outputs)) # bias change
+    loss = np.zeros(nb_batch) # loss value
+    
+    for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
         z_bool = np.zeros((nb_hidden,),dtype=nb.boolean) # spike or not (True or False)
@@ -153,7 +154,6 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,cue_on,decays):
             eij = eps_ijv*phi_j.reshape(1,-1) - beta*eps_ija*phi_j.reshape(1,-1) #!!! faster than using "outer" function
             
             # eligibility trace for eij for input->output (t)
-            # print(input_data[b,t])
             epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             
@@ -162,23 +162,20 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,cue_on,decays):
 
             del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
             loss[b] += 0.5*np.sum((del_y)**2)  # MSE
-
-            # when learning cue is on, and weight update
-            if cue_on[t]!=0:
-
-                lsig = np.dot(del_y, B) # learning signal /// [nb_outputs],[nb_outputs,nb_hidden]-->[nb_hidden]
+            
+            lsig = np.dot(del_y, B) # learning signal /// [nb_outputs],[nb_outputs,nb_hidden]-->[nb_hidden]
                 
-                # (1) update recurrents
-                dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
+            # (1) update recurrents
+            dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
                 
-                # (2) update inputs-->recurrent
-                dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]
+            # (2) update inputs-->recurrent
+            dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]
                 
-                # (3) update of recurrent-->output neurons (below eq.20 in supplementary3)
-                dw2[b] += -lr*eps_jkv.reshape(-1,1)*del_y.reshape(1,-1)
+            # (3) update of recurrent-->output neurons (below eq.20 in supplementary3)
+            dw2[b] += -lr*eps_jkv.reshape(-1,1)*del_y.reshape(1,-1)
                 
-                # (4) bias update
-                # dbias[b] += -lr*del_y 
+            # (4) bias update
+            dbias[b] += -lr*del_y 
                 
             z_counts[z_counts>=1] = z_counts[z_counts>=1]-1 # spike count decay
             v_rec[b,t] = v # save v
@@ -186,12 +183,6 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,cue_on,decays):
             out_rec[b,t] = y # save y
             a_rec[b,t] = a # save a
     return loss, out_rec, dw1, dwr, dw2, dbias, v_rec, z_rec, a_rec
-
-
-
-
-
-
 
 
 

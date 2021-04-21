@@ -97,20 +97,20 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
 @nb.jit(nopython=True, parallel=True)
 def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     # regression version (see supp info P.17)
-    batch_size,nb_steps,nb_inputs = input_data.shape
+    nb_batch,nb_steps,nb_inputs = input_data.shape
     nb_hidden,nb_outputs = w2.shape
     lr,thr,alpha,beta,kappa,rho,t_ref = decays[0], decays[1], decays[2], decays[3], decays[4], decays[5], decays[6] # get params
-    out_rec = np.zeros((batch_size, nb_steps, nb_outputs)) # output record
-    v_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden v record
-    z_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden z record
-    a_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden a record
-    dw1 = np.zeros((batch_size, nb_inputs, nb_hidden)) # input->hidden weight change
-    dwr = np.zeros((batch_size, nb_hidden, nb_hidden)) # hidden weight change
-    dw2 = np.zeros((batch_size, nb_hidden, nb_outputs)) # hidden->output weight change
-    dbias = np.zeros((batch_size, nb_outputs)) # bias change
-    loss = np.zeros(batch_size) # loss value
+    out_rec = np.zeros((nb_batch, nb_steps, nb_outputs)) # output record
+    v_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden v record
+    z_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden z record
+    a_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden a record
+    dw1 = np.zeros((nb_batch, nb_inputs, nb_hidden)) # input->hidden weight change
+    dwr = np.zeros((nb_batch, nb_hidden, nb_hidden)) # hidden weight change
+    dw2 = np.zeros((nb_batch, nb_hidden, nb_outputs)) # hidden->output weight change
+    dbias = np.zeros((nb_batch, nb_outputs)) # bias change
+    loss = np.zeros(nb_batch) # loss value
     
-    for b in nb.prange(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
         z_bool = np.zeros((nb_hidden,),dtype=nb.boolean) # spike or not (True or False)

@@ -209,9 +209,3 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
 
 
 
-
-
-
-
-
-

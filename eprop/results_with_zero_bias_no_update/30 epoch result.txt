@@ -1,0 +1,666 @@
+best_acc = array([0.97265625, 0.9921875 , 0.98828125, 0.9921875 , 0.75390625,
+       0.99609375, 0.96875   , 0.9765625 , 0.9921875 , 0.87890625])
+
+np.max(best_acc) = 0.99609375
+
+
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3189, acc: 0.5243, fr: 0.5240 Hz
+EPOCH 0 VALID) loss: 69.3580, acc: 0.4766, fr: 0.5326 Hz
+EPOCH 1 TRAIN) loss: 69.3293, acc: 0.5130, fr: 0.6124 Hz
+EPOCH 1 VALID) loss: 69.4088, acc: 0.4141, fr: 0.7141 Hz
+EPOCH 2 TRAIN) loss: 69.3606, acc: 0.4818, fr: 0.9122 Hz
+EPOCH 2 VALID) loss: 69.3673, acc: 0.4570, fr: 1.2084 Hz
+EPOCH 3 TRAIN) loss: 69.1595, acc: 0.5048, fr: 1.6094 Hz
+EPOCH 3 VALID) loss: 68.7397, acc: 0.5117, fr: 2.1387 Hz
+EPOCH 4 TRAIN) loss: 68.7018, acc: 0.5122, fr: 2.5498 Hz
+EPOCH 4 VALID) loss: 68.4513, acc: 0.5156, fr: 2.9278 Hz
+EPOCH 5 TRAIN) loss: 68.5474, acc: 0.5330, fr: 3.1212 Hz
+EPOCH 5 VALID) loss: 68.0234, acc: 0.5938, fr: 3.3762 Hz
+EPOCH 6 TRAIN) loss: 68.0086, acc: 0.7339, fr: 3.6258 Hz
+EPOCH 6 VALID) loss: 67.7162, acc: 0.8516, fr: 3.9132 Hz
+EPOCH 7 TRAIN) loss: 67.6087, acc: 0.8134, fr: 4.1796 Hz
+EPOCH 7 VALID) loss: 67.1825, acc: 0.8047, fr: 4.4487 Hz
+EPOCH 8 TRAIN) loss: 67.2841, acc: 0.8112, fr: 4.6148 Hz
+EPOCH 8 VALID) loss: 67.0131, acc: 0.8438, fr: 4.7941 Hz
+EPOCH 9 TRAIN) loss: 66.8711, acc: 0.8607, fr: 4.9861 Hz
+EPOCH 9 VALID) loss: 66.6671, acc: 0.8750, fr: 5.1596 Hz
+EPOCH 10 TRAIN) loss: 66.7254, acc: 0.8351, fr: 5.3192 Hz
+EPOCH 10 VALID) loss: 66.3644, acc: 0.8750, fr: 5.4323 Hz
+EPOCH 11 TRAIN) loss: 66.6198, acc: 0.8728, fr: 5.5835 Hz
+EPOCH 11 VALID) loss: 66.5867, acc: 0.8555, fr: 5.7038 Hz
+EPOCH 12 TRAIN) loss: 66.5603, acc: 0.8694, fr: 5.7952 Hz
+EPOCH 12 VALID) loss: 66.3974, acc: 0.9023, fr: 5.8947 Hz
+EPOCH 13 TRAIN) loss: 66.4621, acc: 0.8893, fr: 5.9728 Hz
+EPOCH 13 VALID) loss: 66.2223, acc: 0.8984, fr: 6.0330 Hz
+EPOCH 14 TRAIN) loss: 66.5301, acc: 0.8911, fr: 6.1091 Hz
+EPOCH 14 VALID) loss: 66.2685, acc: 0.9102, fr: 6.1633 Hz
+EPOCH 15 TRAIN) loss: 66.3137, acc: 0.9093, fr: 6.2231 Hz
+EPOCH 15 VALID) loss: 66.0632, acc: 0.9375, fr: 6.2907 Hz
+EPOCH 16 TRAIN) loss: 66.2641, acc: 0.9110, fr: 6.3357 Hz
+EPOCH 16 VALID) loss: 65.8931, acc: 0.9492, fr: 6.3685 Hz
+EPOCH 17 TRAIN) loss: 66.1187, acc: 0.9358, fr: 6.4662 Hz
+EPOCH 17 VALID) loss: 65.8466, acc: 0.9258, fr: 6.5115 Hz
+EPOCH 18 TRAIN) loss: 65.9986, acc: 0.9332, fr: 6.5874 Hz
+EPOCH 18 VALID) loss: 65.7009, acc: 0.9570, fr: 6.6274 Hz
+EPOCH 19 TRAIN) loss: 65.8480, acc: 0.9410, fr: 6.7046 Hz
+EPOCH 19 VALID) loss: 65.6929, acc: 0.9531, fr: 6.8088 Hz
+EPOCH 20 TRAIN) loss: 65.8238, acc: 0.9440, fr: 6.8209 Hz
+EPOCH 20 VALID) loss: 65.0827, acc: 0.9648, fr: 6.8334 Hz
+EPOCH 21 TRAIN) loss: 65.5740, acc: 0.9510, fr: 6.8657 Hz
+EPOCH 21 VALID) loss: 65.1187, acc: 0.9609, fr: 6.8636 Hz
+EPOCH 22 TRAIN) loss: 65.5651, acc: 0.9427, fr: 6.8939 Hz
+EPOCH 22 VALID) loss: 65.2991, acc: 0.9570, fr: 6.8953 Hz
+EPOCH 23 TRAIN) loss: 65.5595, acc: 0.9540, fr: 6.9281 Hz
+EPOCH 23 VALID) loss: 65.3903, acc: 0.9492, fr: 6.9334 Hz
+EPOCH 24 TRAIN) loss: 65.6650, acc: 0.9475, fr: 6.9644 Hz
+EPOCH 24 VALID) loss: 65.3664, acc: 0.9570, fr: 6.9734 Hz
+EPOCH 25 TRAIN) loss: 65.5409, acc: 0.9449, fr: 7.0102 Hz
+EPOCH 25 VALID) loss: 65.1414, acc: 0.9727, fr: 7.0295 Hz
+EPOCH 26 TRAIN) loss: 65.5579, acc: 0.9527, fr: 7.0452 Hz
+EPOCH 26 VALID) loss: 65.4299, acc: 0.9414, fr: 7.0566 Hz
+EPOCH 27 TRAIN) loss: 65.5668, acc: 0.9327, fr: 7.0897 Hz
+EPOCH 27 VALID) loss: 65.5739, acc: 0.9297, fr: 7.1206 Hz
+EPOCH 28 TRAIN) loss: 65.6955, acc: 0.9349, fr: 7.1639 Hz
+EPOCH 28 VALID) loss: 65.5327, acc: 0.9336, fr: 7.2058 Hz
+EPOCH 29 TRAIN) loss: 65.7550, acc: 0.9297, fr: 7.2713 Hz
+EPOCH 29 VALID) loss: 65.1980, acc: 0.9492, fr: 7.3038 Hz
+num_trial= 0
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3495, acc: 0.5000, fr: 0.4749 Hz
+EPOCH 0 VALID) loss: 69.4060, acc: 0.4648, fr: 0.4913 Hz
+EPOCH 1 TRAIN) loss: 69.3232, acc: 0.5165, fr: 0.5586 Hz
+EPOCH 1 VALID) loss: 69.3881, acc: 0.4727, fr: 0.6368 Hz
+EPOCH 2 TRAIN) loss: 69.3135, acc: 0.5113, fr: 0.7471 Hz
+EPOCH 2 VALID) loss: 69.4050, acc: 0.4883, fr: 0.8788 Hz
+EPOCH 3 TRAIN) loss: 69.2841, acc: 0.5143, fr: 1.0104 Hz
+EPOCH 3 VALID) loss: 69.3430, acc: 0.4961, fr: 1.1427 Hz
+EPOCH 4 TRAIN) loss: 69.2057, acc: 0.5516, fr: 1.3035 Hz
+EPOCH 4 VALID) loss: 69.2532, acc: 0.5156, fr: 1.4557 Hz
+EPOCH 5 TRAIN) loss: 69.0457, acc: 0.6068, fr: 1.6125 Hz
+EPOCH 5 VALID) loss: 68.9914, acc: 0.5977, fr: 1.7530 Hz
+EPOCH 6 TRAIN) loss: 68.7153, acc: 0.6688, fr: 1.9556 Hz
+EPOCH 6 VALID) loss: 68.5825, acc: 0.6836, fr: 2.1478 Hz
+EPOCH 7 TRAIN) loss: 68.1406, acc: 0.7626, fr: 2.3623 Hz
+EPOCH 7 VALID) loss: 67.9509, acc: 0.7539, fr: 2.5773 Hz
+EPOCH 8 TRAIN) loss: 67.2530, acc: 0.8494, fr: 2.7511 Hz
+EPOCH 8 VALID) loss: 67.0248, acc: 0.8203, fr: 2.9230 Hz
+EPOCH 9 TRAIN) loss: 65.9568, acc: 0.8941, fr: 3.1157 Hz
+EPOCH 9 VALID) loss: 65.6789, acc: 0.8906, fr: 3.3208 Hz
+EPOCH 10 TRAIN) loss: 64.5304, acc: 0.9323, fr: 3.4999 Hz
+EPOCH 10 VALID) loss: 64.3266, acc: 0.9336, fr: 3.7107 Hz
+EPOCH 11 TRAIN) loss: 63.3048, acc: 0.9462, fr: 3.8590 Hz
+EPOCH 11 VALID) loss: 63.1519, acc: 0.9492, fr: 4.0351 Hz
+EPOCH 12 TRAIN) loss: 62.4647, acc: 0.9544, fr: 4.1196 Hz
+EPOCH 12 VALID) loss: 63.1713, acc: 0.9414, fr: 4.2735 Hz
+EPOCH 13 TRAIN) loss: 61.8173, acc: 0.9570, fr: 4.3277 Hz
+EPOCH 13 VALID) loss: 62.4199, acc: 0.9336, fr: 4.4462 Hz
+EPOCH 14 TRAIN) loss: 61.1617, acc: 0.9614, fr: 4.5044 Hz
+EPOCH 14 VALID) loss: 62.0988, acc: 0.9375, fr: 4.5838 Hz
+EPOCH 15 TRAIN) loss: 60.6576, acc: 0.9605, fr: 4.6759 Hz
+EPOCH 15 VALID) loss: 62.0463, acc: 0.9531, fr: 4.8028 Hz
+EPOCH 16 TRAIN) loss: 60.4219, acc: 0.9540, fr: 4.8927 Hz
+EPOCH 16 VALID) loss: 61.6583, acc: 0.9570, fr: 4.9859 Hz
+EPOCH 17 TRAIN) loss: 59.8995, acc: 0.9579, fr: 5.0961 Hz
+EPOCH 17 VALID) loss: 60.6191, acc: 0.9609, fr: 5.2013 Hz
+EPOCH 18 TRAIN) loss: 59.4546, acc: 0.9635, fr: 5.3221 Hz
+EPOCH 18 VALID) loss: 60.0392, acc: 0.9492, fr: 5.4425 Hz
+EPOCH 19 TRAIN) loss: 59.1384, acc: 0.9583, fr: 5.5358 Hz
+EPOCH 19 VALID) loss: 60.1568, acc: 0.9570, fr: 5.6438 Hz
+EPOCH 20 TRAIN) loss: 58.6634, acc: 0.9679, fr: 5.7499 Hz
+EPOCH 20 VALID) loss: 59.1711, acc: 0.9609, fr: 5.8245 Hz
+EPOCH 21 TRAIN) loss: 58.1969, acc: 0.9640, fr: 5.9606 Hz
+EPOCH 21 VALID) loss: 60.0788, acc: 0.9570, fr: 6.0789 Hz
+EPOCH 22 TRAIN) loss: 57.7468, acc: 0.9744, fr: 6.1945 Hz
+EPOCH 22 VALID) loss: 59.7106, acc: 0.9727, fr: 6.2820 Hz
+EPOCH 23 TRAIN) loss: 57.2938, acc: 0.9761, fr: 6.3948 Hz
+EPOCH 23 VALID) loss: 58.2882, acc: 0.9844, fr: 6.5343 Hz
+EPOCH 24 TRAIN) loss: 56.8998, acc: 0.9770, fr: 6.6264 Hz
+EPOCH 24 VALID) loss: 58.7724, acc: 0.9727, fr: 6.7956 Hz
+EPOCH 25 TRAIN) loss: 56.9869, acc: 0.9800, fr: 6.8679 Hz
+EPOCH 25 VALID) loss: 57.6925, acc: 0.9727, fr: 7.0139 Hz
+EPOCH 26 TRAIN) loss: 57.0635, acc: 0.9800, fr: 7.1388 Hz
+EPOCH 26 VALID) loss: 57.3352, acc: 0.9922, fr: 7.2782 Hz
+EPOCH 27 TRAIN) loss: 56.5934, acc: 0.9779, fr: 7.3955 Hz
+EPOCH 27 VALID) loss: 57.5041, acc: 0.9844, fr: 7.5089 Hz
+EPOCH 28 TRAIN) loss: 56.5785, acc: 0.9787, fr: 7.6917 Hz
+EPOCH 28 VALID) loss: 57.0282, acc: 0.9727, fr: 7.8650 Hz
+EPOCH 29 TRAIN) loss: 56.7355, acc: 0.9731, fr: 8.0070 Hz
+EPOCH 29 VALID) loss: 58.0915, acc: 0.9727, fr: 8.1973 Hz
+num_trial= 1
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3358, acc: 0.4983, fr: 0.5391 Hz
+EPOCH 0 VALID) loss: 69.2634, acc: 0.5625, fr: 0.5695 Hz
+EPOCH 1 TRAIN) loss: 69.3293, acc: 0.5074, fr: 0.6138 Hz
+EPOCH 1 VALID) loss: 69.2967, acc: 0.5391, fr: 0.7026 Hz
+EPOCH 2 TRAIN) loss: 69.3249, acc: 0.5148, fr: 0.7657 Hz
+EPOCH 2 VALID) loss: 69.2985, acc: 0.5508, fr: 0.8819 Hz
+EPOCH 3 TRAIN) loss: 69.3046, acc: 0.5425, fr: 0.9741 Hz
+EPOCH 3 VALID) loss: 69.2964, acc: 0.5312, fr: 1.1337 Hz
+EPOCH 4 TRAIN) loss: 69.2567, acc: 0.5503, fr: 1.2588 Hz
+EPOCH 4 VALID) loss: 69.2679, acc: 0.4883, fr: 1.4664 Hz
+EPOCH 5 TRAIN) loss: 69.1006, acc: 0.5208, fr: 1.6192 Hz
+EPOCH 5 VALID) loss: 69.2605, acc: 0.4609, fr: 1.8476 Hz
+EPOCH 6 TRAIN) loss: 68.7960, acc: 0.5126, fr: 1.9659 Hz
+EPOCH 6 VALID) loss: 68.9179, acc: 0.4727, fr: 2.2223 Hz
+EPOCH 7 TRAIN) loss: 68.1229, acc: 0.5898, fr: 2.3277 Hz
+EPOCH 7 VALID) loss: 67.7797, acc: 0.7227, fr: 2.5780 Hz
+EPOCH 8 TRAIN) loss: 66.9482, acc: 0.8442, fr: 2.6877 Hz
+EPOCH 8 VALID) loss: 66.5662, acc: 0.9141, fr: 2.8987 Hz
+EPOCH 9 TRAIN) loss: 65.5890, acc: 0.9410, fr: 2.9827 Hz
+EPOCH 9 VALID) loss: 65.7170, acc: 0.9297, fr: 3.1678 Hz
+EPOCH 10 TRAIN) loss: 64.7348, acc: 0.9379, fr: 3.2499 Hz
+EPOCH 10 VALID) loss: 65.2662, acc: 0.9375, fr: 3.4327 Hz
+EPOCH 11 TRAIN) loss: 64.1891, acc: 0.9553, fr: 3.4879 Hz
+EPOCH 11 VALID) loss: 64.8605, acc: 0.9531, fr: 3.6801 Hz
+EPOCH 12 TRAIN) loss: 63.7735, acc: 0.9714, fr: 3.7309 Hz
+EPOCH 12 VALID) loss: 64.2987, acc: 0.9688, fr: 3.9323 Hz
+EPOCH 13 TRAIN) loss: 63.3350, acc: 0.9805, fr: 3.9713 Hz
+EPOCH 13 VALID) loss: 64.0539, acc: 0.9805, fr: 4.1317 Hz
+EPOCH 14 TRAIN) loss: 62.9074, acc: 0.9766, fr: 4.1550 Hz
+EPOCH 14 VALID) loss: 63.3332, acc: 0.9766, fr: 4.2901 Hz
+EPOCH 15 TRAIN) loss: 62.6783, acc: 0.9792, fr: 4.3590 Hz
+EPOCH 15 VALID) loss: 63.0369, acc: 0.9883, fr: 4.5219 Hz
+EPOCH 16 TRAIN) loss: 62.2339, acc: 0.9844, fr: 4.6274 Hz
+EPOCH 16 VALID) loss: 63.0354, acc: 0.9844, fr: 4.8537 Hz
+EPOCH 17 TRAIN) loss: 62.1039, acc: 0.9805, fr: 4.9419 Hz
+EPOCH 17 VALID) loss: 63.0668, acc: 0.9688, fr: 5.1981 Hz
+EPOCH 18 TRAIN) loss: 61.8930, acc: 0.9813, fr: 5.2718 Hz
+EPOCH 18 VALID) loss: 62.5369, acc: 0.9727, fr: 5.5203 Hz
+EPOCH 19 TRAIN) loss: 61.6486, acc: 0.9701, fr: 5.5463 Hz
+EPOCH 19 VALID) loss: 62.2472, acc: 0.9531, fr: 5.7966 Hz
+EPOCH 20 TRAIN) loss: 61.5292, acc: 0.9661, fr: 5.8356 Hz
+EPOCH 20 VALID) loss: 62.1414, acc: 0.9727, fr: 6.0788 Hz
+EPOCH 21 TRAIN) loss: 61.3705, acc: 0.9631, fr: 6.1077 Hz
+EPOCH 21 VALID) loss: 62.2127, acc: 0.9648, fr: 6.3415 Hz
+EPOCH 22 TRAIN) loss: 61.4422, acc: 0.9631, fr: 6.4129 Hz
+EPOCH 22 VALID) loss: 63.1004, acc: 0.9336, fr: 6.6772 Hz
+EPOCH 23 TRAIN) loss: 61.2512, acc: 0.9596, fr: 6.6991 Hz
+EPOCH 23 VALID) loss: 63.2216, acc: 0.9531, fr: 6.9804 Hz
+EPOCH 24 TRAIN) loss: 61.8145, acc: 0.9575, fr: 6.9930 Hz
+EPOCH 24 VALID) loss: 62.9031, acc: 0.9375, fr: 7.2855 Hz
+EPOCH 25 TRAIN) loss: 61.9220, acc: 0.9466, fr: 7.3078 Hz
+EPOCH 25 VALID) loss: 63.1462, acc: 0.9531, fr: 7.6272 Hz
+EPOCH 26 TRAIN) loss: 62.1680, acc: 0.9470, fr: 7.6381 Hz
+EPOCH 26 VALID) loss: 63.9698, acc: 0.9180, fr: 7.9684 Hz
+EPOCH 27 TRAIN) loss: 62.2809, acc: 0.9392, fr: 7.9687 Hz
+EPOCH 27 VALID) loss: 63.1708, acc: 0.9297, fr: 8.2990 Hz
+EPOCH 28 TRAIN) loss: 62.3987, acc: 0.9401, fr: 8.3429 Hz
+EPOCH 28 VALID) loss: 63.5962, acc: 0.9102, fr: 8.7074 Hz
+EPOCH 29 TRAIN) loss: 62.5260, acc: 0.9397, fr: 8.7299 Hz
+EPOCH 29 VALID) loss: 63.9918, acc: 0.9141, fr: 9.1372 Hz
+num_trial= 2
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3050, acc: 0.5195, fr: 0.4213 Hz
+EPOCH 0 VALID) loss: 69.3242, acc: 0.5352, fr: 0.4461 Hz
+EPOCH 1 TRAIN) loss: 69.2748, acc: 0.5230, fr: 0.5388 Hz
+EPOCH 1 VALID) loss: 69.2918, acc: 0.5195, fr: 0.6548 Hz
+EPOCH 2 TRAIN) loss: 69.2411, acc: 0.5200, fr: 0.8074 Hz
+EPOCH 2 VALID) loss: 69.2765, acc: 0.5234, fr: 0.9738 Hz
+EPOCH 3 TRAIN) loss: 69.1931, acc: 0.5156, fr: 1.1569 Hz
+EPOCH 3 VALID) loss: 69.2131, acc: 0.5156, fr: 1.3541 Hz
+EPOCH 4 TRAIN) loss: 69.0212, acc: 0.5156, fr: 1.6028 Hz
+EPOCH 4 VALID) loss: 68.8989, acc: 0.5156, fr: 1.9080 Hz
+EPOCH 5 TRAIN) loss: 68.6675, acc: 0.5156, fr: 2.1655 Hz
+EPOCH 5 VALID) loss: 68.5151, acc: 0.5156, fr: 2.4343 Hz
+EPOCH 6 TRAIN) loss: 68.1607, acc: 0.5174, fr: 2.7322 Hz
+EPOCH 6 VALID) loss: 68.0004, acc: 0.5195, fr: 2.9913 Hz
+EPOCH 7 TRAIN) loss: 67.4146, acc: 0.5868, fr: 3.2633 Hz
+EPOCH 7 VALID) loss: 67.0073, acc: 0.7031, fr: 3.5688 Hz
+EPOCH 8 TRAIN) loss: 66.6391, acc: 0.7817, fr: 3.8705 Hz
+EPOCH 8 VALID) loss: 66.4775, acc: 0.8047, fr: 4.1866 Hz
+EPOCH 9 TRAIN) loss: 66.2540, acc: 0.8325, fr: 4.4168 Hz
+EPOCH 9 VALID) loss: 66.1336, acc: 0.8477, fr: 4.6326 Hz
+EPOCH 10 TRAIN) loss: 65.8886, acc: 0.8776, fr: 4.8323 Hz
+EPOCH 10 VALID) loss: 65.7456, acc: 0.9023, fr: 5.0312 Hz
+EPOCH 11 TRAIN) loss: 65.4687, acc: 0.8880, fr: 5.2101 Hz
+EPOCH 11 VALID) loss: 65.2267, acc: 0.8906, fr: 5.3728 Hz
+EPOCH 12 TRAIN) loss: 65.0184, acc: 0.8954, fr: 5.4928 Hz
+EPOCH 12 VALID) loss: 65.0631, acc: 0.8945, fr: 5.5843 Hz
+EPOCH 13 TRAIN) loss: 64.5237, acc: 0.9154, fr: 5.6806 Hz
+EPOCH 13 VALID) loss: 64.3605, acc: 0.9336, fr: 5.7555 Hz
+EPOCH 14 TRAIN) loss: 64.0241, acc: 0.9258, fr: 5.8745 Hz
+EPOCH 14 VALID) loss: 63.8657, acc: 0.9492, fr: 5.9552 Hz
+EPOCH 15 TRAIN) loss: 63.6412, acc: 0.9544, fr: 6.0702 Hz
+EPOCH 15 VALID) loss: 63.4336, acc: 0.9727, fr: 6.1328 Hz
+EPOCH 16 TRAIN) loss: 63.5194, acc: 0.9622, fr: 6.2778 Hz
+EPOCH 16 VALID) loss: 63.2255, acc: 0.9609, fr: 6.3421 Hz
+EPOCH 17 TRAIN) loss: 63.1284, acc: 0.9709, fr: 6.4885 Hz
+EPOCH 17 VALID) loss: 63.1973, acc: 0.9648, fr: 6.5902 Hz
+EPOCH 18 TRAIN) loss: 62.9188, acc: 0.9709, fr: 6.7322 Hz
+EPOCH 18 VALID) loss: 62.6158, acc: 0.9727, fr: 6.8400 Hz
+EPOCH 19 TRAIN) loss: 62.5524, acc: 0.9727, fr: 6.9903 Hz
+EPOCH 19 VALID) loss: 62.6042, acc: 0.9844, fr: 7.1135 Hz
+EPOCH 20 TRAIN) loss: 62.1159, acc: 0.9748, fr: 7.2718 Hz
+EPOCH 20 VALID) loss: 62.4325, acc: 0.9648, fr: 7.4202 Hz
+EPOCH 21 TRAIN) loss: 62.1711, acc: 0.9809, fr: 7.5722 Hz
+EPOCH 21 VALID) loss: 61.9838, acc: 0.9727, fr: 7.7165 Hz
+EPOCH 22 TRAIN) loss: 62.0406, acc: 0.9800, fr: 7.8618 Hz
+EPOCH 22 VALID) loss: 61.6475, acc: 0.9805, fr: 7.9880 Hz
+EPOCH 23 TRAIN) loss: 62.0067, acc: 0.9805, fr: 8.1555 Hz
+EPOCH 23 VALID) loss: 62.1868, acc: 0.9609, fr: 8.2575 Hz
+EPOCH 24 TRAIN) loss: 61.7123, acc: 0.9822, fr: 8.4198 Hz
+EPOCH 24 VALID) loss: 61.9152, acc: 0.9922, fr: 8.5619 Hz
+EPOCH 25 TRAIN) loss: 61.7168, acc: 0.9813, fr: 8.6772 Hz
+EPOCH 25 VALID) loss: 61.8557, acc: 0.9805, fr: 8.8209 Hz
+EPOCH 26 TRAIN) loss: 61.5240, acc: 0.9766, fr: 8.9234 Hz
+EPOCH 26 VALID) loss: 61.6511, acc: 0.9844, fr: 9.0091 Hz
+EPOCH 27 TRAIN) loss: 61.4751, acc: 0.9783, fr: 9.1758 Hz
+EPOCH 27 VALID) loss: 62.4480, acc: 0.9727, fr: 9.2841 Hz
+EPOCH 28 TRAIN) loss: 61.4645, acc: 0.9757, fr: 9.4138 Hz
+EPOCH 28 VALID) loss: 61.4829, acc: 0.9727, fr: 9.5254 Hz
+EPOCH 29 TRAIN) loss: 61.5207, acc: 0.9770, fr: 9.6217 Hz
+EPOCH 29 VALID) loss: 61.3465, acc: 0.9883, fr: 9.7242 Hz
+num_trial= 3
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3306, acc: 0.4909, fr: 0.5325 Hz
+EPOCH 0 VALID) loss: 69.3381, acc: 0.4883, fr: 0.7245 Hz
+EPOCH 1 TRAIN) loss: 69.3304, acc: 0.4948, fr: 0.8007 Hz
+EPOCH 1 VALID) loss: 69.3857, acc: 0.4375, fr: 1.1448 Hz
+EPOCH 2 TRAIN) loss: 69.3188, acc: 0.5078, fr: 1.4414 Hz
+EPOCH 2 VALID) loss: 69.3443, acc: 0.4688, fr: 2.1317 Hz
+EPOCH 3 TRAIN) loss: 69.1582, acc: 0.5169, fr: 2.6488 Hz
+EPOCH 3 VALID) loss: 69.2653, acc: 0.4375, fr: 3.6533 Hz
+EPOCH 4 TRAIN) loss: 68.5993, acc: 0.5100, fr: 4.2629 Hz
+EPOCH 4 VALID) loss: 69.1240, acc: 0.4375, fr: 4.9026 Hz
+EPOCH 5 TRAIN) loss: 67.9415, acc: 0.5122, fr: 4.8364 Hz
+EPOCH 5 VALID) loss: 68.6441, acc: 0.4375, fr: 4.9407 Hz
+EPOCH 6 TRAIN) loss: 67.3591, acc: 0.5530, fr: 4.7207 Hz
+EPOCH 6 VALID) loss: 67.7074, acc: 0.5898, fr: 5.1866 Hz
+EPOCH 7 TRAIN) loss: 66.5248, acc: 0.7014, fr: 5.4038 Hz
+EPOCH 7 VALID) loss: 66.8574, acc: 0.7188, fr: 5.7784 Hz
+EPOCH 8 TRAIN) loss: 66.8956, acc: 0.7574, fr: 5.5842 Hz
+EPOCH 8 VALID) loss: 68.0962, acc: 0.7266, fr: 5.6668 Hz
+EPOCH 9 TRAIN) loss: 67.5485, acc: 0.7669, fr: 5.7929 Hz
+EPOCH 9 VALID) loss: 67.7464, acc: 0.7539, fr: 6.1941 Hz
+EPOCH 10 TRAIN) loss: 67.7504, acc: 0.7305, fr: 6.4620 Hz
+EPOCH 10 VALID) loss: 68.1814, acc: 0.6914, fr: 6.9302 Hz
+EPOCH 11 TRAIN) loss: 67.8608, acc: 0.7109, fr: 7.0324 Hz
+EPOCH 11 VALID) loss: 68.3904, acc: 0.6055, fr: 7.4780 Hz
+EPOCH 12 TRAIN) loss: 67.7636, acc: 0.7066, fr: 7.5209 Hz
+EPOCH 12 VALID) loss: 68.4781, acc: 0.5859, fr: 7.8423 Hz
+EPOCH 13 TRAIN) loss: 67.7624, acc: 0.7370, fr: 7.8583 Hz
+EPOCH 13 VALID) loss: 68.3433, acc: 0.6055, fr: 8.1245 Hz
+EPOCH 14 TRAIN) loss: 67.6361, acc: 0.7535, fr: 8.1052 Hz
+EPOCH 14 VALID) loss: 68.5704, acc: 0.6211, fr: 8.3345 Hz
+EPOCH 15 TRAIN) loss: 67.6633, acc: 0.7552, fr: 8.3326 Hz
+EPOCH 15 VALID) loss: 68.3246, acc: 0.6211, fr: 8.6015 Hz
+EPOCH 16 TRAIN) loss: 67.6743, acc: 0.7435, fr: 8.5266 Hz
+EPOCH 16 VALID) loss: 68.2635, acc: 0.6172, fr: 8.7370 Hz
+EPOCH 17 TRAIN) loss: 67.4796, acc: 0.7639, fr: 8.7232 Hz
+EPOCH 17 VALID) loss: 68.0237, acc: 0.6445, fr: 8.9641 Hz
+EPOCH 18 TRAIN) loss: 67.4881, acc: 0.7556, fr: 8.9157 Hz
+EPOCH 18 VALID) loss: 68.1235, acc: 0.6406, fr: 9.1521 Hz
+EPOCH 19 TRAIN) loss: 67.5112, acc: 0.7522, fr: 9.0916 Hz
+EPOCH 19 VALID) loss: 68.2548, acc: 0.6133, fr: 9.2788 Hz
+EPOCH 20 TRAIN) loss: 67.5075, acc: 0.7378, fr: 9.2356 Hz
+EPOCH 20 VALID) loss: 68.3438, acc: 0.5859, fr: 9.3930 Hz
+EPOCH 21 TRAIN) loss: 67.4428, acc: 0.7426, fr: 9.3432 Hz
+EPOCH 21 VALID) loss: 68.2843, acc: 0.6094, fr: 9.5064 Hz
+EPOCH 22 TRAIN) loss: 67.3972, acc: 0.7352, fr: 9.4315 Hz
+EPOCH 22 VALID) loss: 68.3410, acc: 0.5898, fr: 9.5989 Hz
+EPOCH 23 TRAIN) loss: 67.3934, acc: 0.7374, fr: 9.5358 Hz
+EPOCH 23 VALID) loss: 68.4176, acc: 0.6094, fr: 9.7018 Hz
+EPOCH 24 TRAIN) loss: 67.3714, acc: 0.7357, fr: 9.6538 Hz
+EPOCH 24 VALID) loss: 68.1235, acc: 0.6289, fr: 9.7927 Hz
+EPOCH 25 TRAIN) loss: 67.3358, acc: 0.7461, fr: 9.7350 Hz
+EPOCH 25 VALID) loss: 68.1567, acc: 0.6211, fr: 9.9087 Hz
+EPOCH 26 TRAIN) loss: 67.2707, acc: 0.7595, fr: 9.8020 Hz
+EPOCH 26 VALID) loss: 67.9341, acc: 0.6211, fr: 10.0657 Hz
+EPOCH 27 TRAIN) loss: 67.3419, acc: 0.7426, fr: 9.9029 Hz
+EPOCH 27 VALID) loss: 68.0868, acc: 0.6328, fr: 10.1782 Hz
+EPOCH 28 TRAIN) loss: 67.2692, acc: 0.7478, fr: 10.0082 Hz
+EPOCH 28 VALID) loss: 68.0500, acc: 0.6367, fr: 10.2513 Hz
+EPOCH 29 TRAIN) loss: 67.3154, acc: 0.7391, fr: 10.1372 Hz
+EPOCH 29 VALID) loss: 68.1866, acc: 0.6133, fr: 10.3192 Hz
+num_trial= 4
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3155, acc: 0.5213, fr: 0.5379 Hz
+EPOCH 0 VALID) loss: 69.2949, acc: 0.5430, fr: 0.5806 Hz
+EPOCH 1 TRAIN) loss: 69.3137, acc: 0.5091, fr: 0.6346 Hz
+EPOCH 1 VALID) loss: 69.3112, acc: 0.5391, fr: 0.7791 Hz
+EPOCH 2 TRAIN) loss: 69.3087, acc: 0.5117, fr: 0.9348 Hz
+EPOCH 2 VALID) loss: 69.2644, acc: 0.5508, fr: 1.2480 Hz
+EPOCH 3 TRAIN) loss: 69.1959, acc: 0.5204, fr: 1.6328 Hz
+EPOCH 3 VALID) loss: 68.9003, acc: 0.5391, fr: 2.2468 Hz
+EPOCH 4 TRAIN) loss: 68.9137, acc: 0.5312, fr: 2.7387 Hz
+EPOCH 4 VALID) loss: 68.4085, acc: 0.5938, fr: 3.2452 Hz
+EPOCH 5 TRAIN) loss: 68.6034, acc: 0.6406, fr: 3.4851 Hz
+EPOCH 5 VALID) loss: 68.1422, acc: 0.7734, fr: 3.7147 Hz
+EPOCH 6 TRAIN) loss: 68.1739, acc: 0.7569, fr: 3.8369 Hz
+EPOCH 6 VALID) loss: 67.7441, acc: 0.7500, fr: 3.9555 Hz
+EPOCH 7 TRAIN) loss: 67.6810, acc: 0.8138, fr: 4.1013 Hz
+EPOCH 7 VALID) loss: 67.2345, acc: 0.9102, fr: 4.3232 Hz
+EPOCH 8 TRAIN) loss: 67.0154, acc: 0.9184, fr: 4.5265 Hz
+EPOCH 8 VALID) loss: 66.6336, acc: 0.9688, fr: 4.7915 Hz
+EPOCH 9 TRAIN) loss: 66.1796, acc: 0.9514, fr: 4.9911 Hz
+EPOCH 9 VALID) loss: 65.7765, acc: 0.9609, fr: 5.2211 Hz
+EPOCH 10 TRAIN) loss: 65.2414, acc: 0.9722, fr: 5.3664 Hz
+EPOCH 10 VALID) loss: 64.7452, acc: 0.9766, fr: 5.5412 Hz
+EPOCH 11 TRAIN) loss: 64.4414, acc: 0.9787, fr: 5.6622 Hz
+EPOCH 11 VALID) loss: 64.2943, acc: 0.9766, fr: 5.8498 Hz
+EPOCH 12 TRAIN) loss: 63.7894, acc: 0.9735, fr: 5.9756 Hz
+EPOCH 12 VALID) loss: 64.1569, acc: 0.9922, fr: 6.1596 Hz
+EPOCH 13 TRAIN) loss: 63.2688, acc: 0.9735, fr: 6.2474 Hz
+EPOCH 13 VALID) loss: 63.7607, acc: 0.9609, fr: 6.4187 Hz
+EPOCH 14 TRAIN) loss: 62.9765, acc: 0.9735, fr: 6.4941 Hz
+EPOCH 14 VALID) loss: 63.4253, acc: 0.9688, fr: 6.6604 Hz
+EPOCH 15 TRAIN) loss: 62.8127, acc: 0.9805, fr: 6.7564 Hz
+EPOCH 15 VALID) loss: 63.0078, acc: 0.9570, fr: 6.9288 Hz
+EPOCH 16 TRAIN) loss: 62.3983, acc: 0.9740, fr: 7.0005 Hz
+EPOCH 16 VALID) loss: 62.3594, acc: 0.9648, fr: 7.1976 Hz
+EPOCH 17 TRAIN) loss: 61.9819, acc: 0.9714, fr: 7.2381 Hz
+EPOCH 17 VALID) loss: 62.1386, acc: 0.9766, fr: 7.4134 Hz
+EPOCH 18 TRAIN) loss: 61.7071, acc: 0.9718, fr: 7.4766 Hz
+EPOCH 18 VALID) loss: 62.0264, acc: 0.9688, fr: 7.6680 Hz
+EPOCH 19 TRAIN) loss: 61.3328, acc: 0.9696, fr: 7.7602 Hz
+EPOCH 19 VALID) loss: 61.4974, acc: 0.9961, fr: 7.9702 Hz
+EPOCH 20 TRAIN) loss: 60.8937, acc: 0.9735, fr: 8.0467 Hz
+EPOCH 20 VALID) loss: 61.7414, acc: 0.9609, fr: 8.2448 Hz
+EPOCH 21 TRAIN) loss: 60.8999, acc: 0.9705, fr: 8.3374 Hz
+EPOCH 21 VALID) loss: 61.1772, acc: 0.9688, fr: 8.5889 Hz
+EPOCH 22 TRAIN) loss: 60.9081, acc: 0.9670, fr: 8.7038 Hz
+EPOCH 22 VALID) loss: 61.2549, acc: 0.9688, fr: 9.0350 Hz
+EPOCH 23 TRAIN) loss: 61.0799, acc: 0.9657, fr: 9.1625 Hz
+EPOCH 23 VALID) loss: 61.6345, acc: 0.9688, fr: 9.5024 Hz
+EPOCH 24 TRAIN) loss: 61.1697, acc: 0.9670, fr: 9.5930 Hz
+EPOCH 24 VALID) loss: 61.2503, acc: 0.9609, fr: 9.8220 Hz
+EPOCH 25 TRAIN) loss: 60.8436, acc: 0.9731, fr: 9.8910 Hz
+EPOCH 25 VALID) loss: 60.7132, acc: 0.9727, fr: 10.1280 Hz
+EPOCH 26 TRAIN) loss: 60.6574, acc: 0.9709, fr: 10.2245 Hz
+EPOCH 26 VALID) loss: 60.9575, acc: 0.9805, fr: 10.4716 Hz
+EPOCH 27 TRAIN) loss: 60.6393, acc: 0.9705, fr: 10.5718 Hz
+EPOCH 27 VALID) loss: 60.8267, acc: 0.9688, fr: 10.7919 Hz
+EPOCH 28 TRAIN) loss: 60.7629, acc: 0.9705, fr: 10.9188 Hz
+EPOCH 28 VALID) loss: 60.4418, acc: 0.9766, fr: 11.1674 Hz
+EPOCH 29 TRAIN) loss: 60.6766, acc: 0.9753, fr: 11.2763 Hz
+EPOCH 29 VALID) loss: 61.1330, acc: 0.9609, fr: 11.5506 Hz
+num_trial= 5
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3160, acc: 0.5095, fr: 0.4685 Hz
+EPOCH 0 VALID) loss: 69.3225, acc: 0.5508, fr: 0.4838 Hz
+EPOCH 1 TRAIN) loss: 69.3228, acc: 0.5165, fr: 0.5043 Hz
+EPOCH 1 VALID) loss: 69.3382, acc: 0.5312, fr: 0.5555 Hz
+EPOCH 2 TRAIN) loss: 69.3294, acc: 0.5069, fr: 0.6197 Hz
+EPOCH 2 VALID) loss: 69.3240, acc: 0.5234, fr: 0.7136 Hz
+EPOCH 3 TRAIN) loss: 69.3249, acc: 0.5004, fr: 0.7992 Hz
+EPOCH 3 VALID) loss: 69.3114, acc: 0.4883, fr: 0.9234 Hz
+EPOCH 4 TRAIN) loss: 69.3018, acc: 0.5226, fr: 1.0060 Hz
+EPOCH 4 VALID) loss: 69.2657, acc: 0.5391, fr: 1.1503 Hz
+EPOCH 5 TRAIN) loss: 69.2478, acc: 0.5530, fr: 1.2351 Hz
+EPOCH 5 VALID) loss: 69.1625, acc: 0.5938, fr: 1.3900 Hz
+EPOCH 6 TRAIN) loss: 69.1232, acc: 0.6181, fr: 1.5006 Hz
+EPOCH 6 VALID) loss: 68.9460, acc: 0.7227, fr: 1.6671 Hz
+EPOCH 7 TRAIN) loss: 68.8689, acc: 0.7335, fr: 1.8124 Hz
+EPOCH 7 VALID) loss: 68.5573, acc: 0.7891, fr: 2.0237 Hz
+EPOCH 8 TRAIN) loss: 68.3603, acc: 0.8155, fr: 2.2167 Hz
+EPOCH 8 VALID) loss: 67.9256, acc: 0.8672, fr: 2.4909 Hz
+EPOCH 9 TRAIN) loss: 67.5463, acc: 0.8481, fr: 2.7266 Hz
+EPOCH 9 VALID) loss: 67.0166, acc: 0.8438, fr: 3.0128 Hz
+EPOCH 10 TRAIN) loss: 66.5670, acc: 0.8759, fr: 3.2200 Hz
+EPOCH 10 VALID) loss: 66.0439, acc: 0.9414, fr: 3.4387 Hz
+EPOCH 11 TRAIN) loss: 65.9824, acc: 0.9327, fr: 3.6492 Hz
+EPOCH 11 VALID) loss: 65.8773, acc: 0.9453, fr: 3.8455 Hz
+EPOCH 12 TRAIN) loss: 65.5813, acc: 0.9510, fr: 4.0491 Hz
+EPOCH 12 VALID) loss: 65.0107, acc: 0.9688, fr: 4.2589 Hz
+EPOCH 13 TRAIN) loss: 65.2283, acc: 0.9466, fr: 4.4179 Hz
+EPOCH 13 VALID) loss: 65.0596, acc: 0.9531, fr: 4.5898 Hz
+EPOCH 14 TRAIN) loss: 64.8541, acc: 0.9271, fr: 4.7827 Hz
+EPOCH 14 VALID) loss: 64.4513, acc: 0.9180, fr: 4.8997 Hz
+EPOCH 15 TRAIN) loss: 64.5983, acc: 0.9071, fr: 5.0263 Hz
+EPOCH 15 VALID) loss: 64.0699, acc: 0.9492, fr: 5.1117 Hz
+EPOCH 16 TRAIN) loss: 64.3202, acc: 0.9167, fr: 5.2821 Hz
+EPOCH 16 VALID) loss: 63.9411, acc: 0.9492, fr: 5.3673 Hz
+EPOCH 17 TRAIN) loss: 64.1701, acc: 0.9023, fr: 5.4927 Hz
+EPOCH 17 VALID) loss: 63.7763, acc: 0.9141, fr: 5.5773 Hz
+EPOCH 18 TRAIN) loss: 63.8583, acc: 0.9158, fr: 5.7168 Hz
+EPOCH 18 VALID) loss: 63.5612, acc: 0.9492, fr: 5.8769 Hz
+EPOCH 19 TRAIN) loss: 63.7349, acc: 0.9132, fr: 6.0235 Hz
+EPOCH 19 VALID) loss: 63.5528, acc: 0.9219, fr: 6.2005 Hz
+EPOCH 20 TRAIN) loss: 63.4841, acc: 0.9162, fr: 6.3332 Hz
+EPOCH 20 VALID) loss: 63.5055, acc: 0.9297, fr: 6.5187 Hz
+EPOCH 21 TRAIN) loss: 63.3888, acc: 0.9154, fr: 6.7043 Hz
+EPOCH 21 VALID) loss: 62.8001, acc: 0.9453, fr: 6.9225 Hz
+EPOCH 22 TRAIN) loss: 63.1911, acc: 0.9227, fr: 7.1683 Hz
+EPOCH 22 VALID) loss: 63.0366, acc: 0.9492, fr: 7.4650 Hz
+EPOCH 23 TRAIN) loss: 63.0364, acc: 0.9180, fr: 7.7159 Hz
+EPOCH 23 VALID) loss: 62.6744, acc: 0.9258, fr: 7.9458 Hz
+EPOCH 24 TRAIN) loss: 63.0578, acc: 0.9023, fr: 8.2697 Hz
+EPOCH 24 VALID) loss: 62.5736, acc: 0.9219, fr: 8.4868 Hz
+EPOCH 25 TRAIN) loss: 63.0294, acc: 0.9019, fr: 8.8893 Hz
+EPOCH 25 VALID) loss: 62.2915, acc: 0.9141, fr: 9.1597 Hz
+EPOCH 26 TRAIN) loss: 62.9195, acc: 0.8997, fr: 9.4618 Hz
+EPOCH 26 VALID) loss: 62.2843, acc: 0.9453, fr: 9.6719 Hz
+EPOCH 27 TRAIN) loss: 63.0170, acc: 0.8945, fr: 10.0537 Hz
+EPOCH 27 VALID) loss: 62.0225, acc: 0.9375, fr: 10.2387 Hz
+EPOCH 28 TRAIN) loss: 62.9292, acc: 0.8963, fr: 10.5369 Hz
+EPOCH 28 VALID) loss: 62.3039, acc: 0.9180, fr: 10.7627 Hz
+EPOCH 29 TRAIN) loss: 62.9780, acc: 0.8867, fr: 11.1144 Hz
+EPOCH 29 VALID) loss: 62.8515, acc: 0.9062, fr: 11.3953 Hz
+num_trial= 6
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3290, acc: 0.4909, fr: 0.3848 Hz
+EPOCH 0 VALID) loss: 69.3334, acc: 0.4922, fr: 0.3915 Hz
+EPOCH 1 TRAIN) loss: 69.3262, acc: 0.5009, fr: 0.4759 Hz
+EPOCH 1 VALID) loss: 69.3262, acc: 0.5039, fr: 0.5474 Hz
+EPOCH 2 TRAIN) loss: 69.3088, acc: 0.5243, fr: 0.6696 Hz
+EPOCH 2 VALID) loss: 69.3020, acc: 0.5391, fr: 0.7477 Hz
+EPOCH 3 TRAIN) loss: 69.2963, acc: 0.5508, fr: 0.8378 Hz
+EPOCH 3 VALID) loss: 69.2861, acc: 0.5820, fr: 0.8899 Hz
+EPOCH 4 TRAIN) loss: 69.2637, acc: 0.5543, fr: 0.9668 Hz
+EPOCH 4 VALID) loss: 69.2278, acc: 0.5625, fr: 1.0280 Hz
+EPOCH 5 TRAIN) loss: 69.1935, acc: 0.5378, fr: 1.1060 Hz
+EPOCH 5 VALID) loss: 69.1333, acc: 0.5430, fr: 1.1726 Hz
+EPOCH 6 TRAIN) loss: 69.1171, acc: 0.5256, fr: 1.2588 Hz
+EPOCH 6 VALID) loss: 69.0526, acc: 0.5312, fr: 1.3277 Hz
+EPOCH 7 TRAIN) loss: 69.0306, acc: 0.5191, fr: 1.4209 Hz
+EPOCH 7 VALID) loss: 68.8786, acc: 0.5195, fr: 1.4990 Hz
+EPOCH 8 TRAIN) loss: 68.8986, acc: 0.5213, fr: 1.6134 Hz
+EPOCH 8 VALID) loss: 68.7355, acc: 0.5508, fr: 1.7047 Hz
+EPOCH 9 TRAIN) loss: 68.6355, acc: 0.5651, fr: 1.8188 Hz
+EPOCH 9 VALID) loss: 68.3493, acc: 0.7109, fr: 1.9291 Hz
+EPOCH 10 TRAIN) loss: 68.1393, acc: 0.7891, fr: 2.0600 Hz
+EPOCH 10 VALID) loss: 67.7582, acc: 0.8867, fr: 2.1848 Hz
+EPOCH 11 TRAIN) loss: 67.4440, acc: 0.9275, fr: 2.3607 Hz
+EPOCH 11 VALID) loss: 66.9333, acc: 0.9180, fr: 2.5490 Hz
+EPOCH 12 TRAIN) loss: 66.4003, acc: 0.9449, fr: 2.8174 Hz
+EPOCH 12 VALID) loss: 65.7438, acc: 0.9141, fr: 3.0835 Hz
+EPOCH 13 TRAIN) loss: 65.1497, acc: 0.9379, fr: 3.4369 Hz
+EPOCH 13 VALID) loss: 64.7308, acc: 0.9023, fr: 3.7710 Hz
+EPOCH 14 TRAIN) loss: 64.6932, acc: 0.9379, fr: 4.1760 Hz
+EPOCH 14 VALID) loss: 65.1431, acc: 0.9414, fr: 4.5670 Hz
+EPOCH 15 TRAIN) loss: 65.1013, acc: 0.9514, fr: 5.0205 Hz
+EPOCH 15 VALID) loss: 64.9424, acc: 0.9023, fr: 5.3868 Hz
+EPOCH 16 TRAIN) loss: 64.6954, acc: 0.9010, fr: 5.7463 Hz
+EPOCH 16 VALID) loss: 64.4024, acc: 0.9062, fr: 5.9370 Hz
+EPOCH 17 TRAIN) loss: 64.4096, acc: 0.9527, fr: 6.1622 Hz
+EPOCH 17 VALID) loss: 64.2194, acc: 0.9766, fr: 6.2112 Hz
+EPOCH 18 TRAIN) loss: 63.9953, acc: 0.9670, fr: 6.4286 Hz
+EPOCH 18 VALID) loss: 63.7515, acc: 0.9648, fr: 6.4662 Hz
+EPOCH 19 TRAIN) loss: 63.4242, acc: 0.9470, fr: 6.6325 Hz
+EPOCH 19 VALID) loss: 63.0051, acc: 0.9492, fr: 6.5601 Hz
+EPOCH 20 TRAIN) loss: 62.6847, acc: 0.9527, fr: 6.6713 Hz
+EPOCH 20 VALID) loss: 62.0700, acc: 0.9180, fr: 6.5527 Hz
+EPOCH 21 TRAIN) loss: 62.2025, acc: 0.9284, fr: 6.6870 Hz
+EPOCH 21 VALID) loss: 62.3180, acc: 0.9336, fr: 6.6689 Hz
+EPOCH 22 TRAIN) loss: 62.1039, acc: 0.9549, fr: 6.9246 Hz
+EPOCH 22 VALID) loss: 62.4939, acc: 0.9570, fr: 7.0483 Hz
+EPOCH 23 TRAIN) loss: 62.0730, acc: 0.9488, fr: 7.3750 Hz
+EPOCH 23 VALID) loss: 62.0382, acc: 0.9492, fr: 7.5312 Hz
+EPOCH 24 TRAIN) loss: 61.6331, acc: 0.9523, fr: 7.9305 Hz
+EPOCH 24 VALID) loss: 61.8923, acc: 0.9336, fr: 8.1460 Hz
+EPOCH 25 TRAIN) loss: 61.4761, acc: 0.9479, fr: 8.5312 Hz
+EPOCH 25 VALID) loss: 61.6288, acc: 0.9336, fr: 8.7569 Hz
+EPOCH 26 TRAIN) loss: 61.3457, acc: 0.9497, fr: 9.1806 Hz
+EPOCH 26 VALID) loss: 61.6922, acc: 0.9297, fr: 9.4691 Hz
+EPOCH 27 TRAIN) loss: 61.4439, acc: 0.9414, fr: 10.0118 Hz
+EPOCH 27 VALID) loss: 61.7870, acc: 0.9297, fr: 10.4372 Hz
+EPOCH 28 TRAIN) loss: 61.5214, acc: 0.9462, fr: 11.0238 Hz
+EPOCH 28 VALID) loss: 62.2991, acc: 0.9180, fr: 11.5038 Hz
+EPOCH 29 TRAIN) loss: 61.9596, acc: 0.9436, fr: 12.1438 Hz
+EPOCH 29 VALID) loss: 62.6771, acc: 0.9375, fr: 12.5925 Hz
+num_trial= 7
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3135, acc: 0.5065, fr: 0.4318 Hz
+EPOCH 0 VALID) loss: 69.3506, acc: 0.4531, fr: 0.4547 Hz
+EPOCH 1 TRAIN) loss: 69.3223, acc: 0.5100, fr: 0.5381 Hz
+EPOCH 1 VALID) loss: 69.3814, acc: 0.4766, fr: 0.6516 Hz
+EPOCH 2 TRAIN) loss: 69.3284, acc: 0.5017, fr: 0.8002 Hz
+EPOCH 2 VALID) loss: 69.3816, acc: 0.4961, fr: 0.9592 Hz
+EPOCH 3 TRAIN) loss: 69.3198, acc: 0.5022, fr: 1.1251 Hz
+EPOCH 3 VALID) loss: 69.3550, acc: 0.5156, fr: 1.2713 Hz
+EPOCH 4 TRAIN) loss: 69.2467, acc: 0.5451, fr: 1.4411 Hz
+EPOCH 4 VALID) loss: 69.1802, acc: 0.5859, fr: 1.5945 Hz
+EPOCH 5 TRAIN) loss: 68.9276, acc: 0.7422, fr: 1.7948 Hz
+EPOCH 5 VALID) loss: 68.6236, acc: 0.8281, fr: 1.9734 Hz
+EPOCH 6 TRAIN) loss: 68.3715, acc: 0.8741, fr: 2.1953 Hz
+EPOCH 6 VALID) loss: 68.0601, acc: 0.8984, fr: 2.3887 Hz
+EPOCH 7 TRAIN) loss: 67.8528, acc: 0.9149, fr: 2.6459 Hz
+EPOCH 7 VALID) loss: 67.6035, acc: 0.9492, fr: 2.8959 Hz
+EPOCH 8 TRAIN) loss: 67.4863, acc: 0.9405, fr: 3.1654 Hz
+EPOCH 8 VALID) loss: 67.2731, acc: 0.9570, fr: 3.4261 Hz
+EPOCH 9 TRAIN) loss: 67.2155, acc: 0.9523, fr: 3.6864 Hz
+EPOCH 9 VALID) loss: 67.1010, acc: 0.9688, fr: 3.9359 Hz
+EPOCH 10 TRAIN) loss: 66.7536, acc: 0.9640, fr: 4.2240 Hz
+EPOCH 10 VALID) loss: 66.4889, acc: 0.9766, fr: 4.5176 Hz
+EPOCH 11 TRAIN) loss: 66.1984, acc: 0.9731, fr: 4.7693 Hz
+EPOCH 11 VALID) loss: 65.7837, acc: 0.9922, fr: 4.9878 Hz
+EPOCH 12 TRAIN) loss: 65.5799, acc: 0.9822, fr: 5.2285 Hz
+EPOCH 12 VALID) loss: 65.2420, acc: 0.9883, fr: 5.4375 Hz
+EPOCH 13 TRAIN) loss: 65.0859, acc: 0.9835, fr: 5.6472 Hz
+EPOCH 13 VALID) loss: 64.8399, acc: 0.9805, fr: 5.8444 Hz
+EPOCH 14 TRAIN) loss: 64.5768, acc: 0.9844, fr: 6.0482 Hz
+EPOCH 14 VALID) loss: 64.7804, acc: 0.9805, fr: 6.2402 Hz
+EPOCH 15 TRAIN) loss: 64.2316, acc: 0.9826, fr: 6.4118 Hz
+EPOCH 15 VALID) loss: 64.2219, acc: 0.9766, fr: 6.5485 Hz
+EPOCH 16 TRAIN) loss: 63.8173, acc: 0.9831, fr: 6.7635 Hz
+EPOCH 16 VALID) loss: 63.8032, acc: 0.9766, fr: 6.9934 Hz
+EPOCH 17 TRAIN) loss: 63.4340, acc: 0.9848, fr: 7.2177 Hz
+EPOCH 17 VALID) loss: 63.4828, acc: 0.9766, fr: 7.4907 Hz
+EPOCH 18 TRAIN) loss: 63.3401, acc: 0.9835, fr: 7.6950 Hz
+EPOCH 18 VALID) loss: 62.7824, acc: 0.9727, fr: 7.9887 Hz
+EPOCH 19 TRAIN) loss: 63.1086, acc: 0.9783, fr: 8.2474 Hz
+EPOCH 19 VALID) loss: 62.6973, acc: 0.9688, fr: 8.6116 Hz
+EPOCH 20 TRAIN) loss: 62.8801, acc: 0.9809, fr: 8.9243 Hz
+EPOCH 20 VALID) loss: 62.1353, acc: 0.9688, fr: 9.2926 Hz
+EPOCH 21 TRAIN) loss: 62.6860, acc: 0.9792, fr: 9.6693 Hz
+EPOCH 21 VALID) loss: 62.3936, acc: 0.9531, fr: 10.2180 Hz
+EPOCH 22 TRAIN) loss: 62.5190, acc: 0.9731, fr: 10.6243 Hz
+EPOCH 22 VALID) loss: 62.4419, acc: 0.9297, fr: 11.1534 Hz
+EPOCH 23 TRAIN) loss: 62.4673, acc: 0.9666, fr: 11.7138 Hz
+EPOCH 23 VALID) loss: 62.0244, acc: 0.9414, fr: 12.3763 Hz
+EPOCH 24 TRAIN) loss: 62.3223, acc: 0.9618, fr: 12.8988 Hz
+EPOCH 24 VALID) loss: 62.1303, acc: 0.9297, fr: 13.5412 Hz
+EPOCH 25 TRAIN) loss: 62.0986, acc: 0.9536, fr: 14.1257 Hz
+EPOCH 25 VALID) loss: 61.8869, acc: 0.9219, fr: 14.9207 Hz
+EPOCH 26 TRAIN) loss: 62.0978, acc: 0.9375, fr: 15.4177 Hz
+EPOCH 26 VALID) loss: 61.4385, acc: 0.9805, fr: 16.1168 Hz
+EPOCH 27 TRAIN) loss: 61.9103, acc: 0.9418, fr: 16.6858 Hz
+EPOCH 27 VALID) loss: 62.0214, acc: 0.9570, fr: 17.4192 Hz
+EPOCH 28 TRAIN) loss: 62.2054, acc: 0.9666, fr: 17.9467 Hz
+EPOCH 28 VALID) loss: 61.6760, acc: 0.9766, fr: 18.6590 Hz
+EPOCH 29 TRAIN) loss: 62.5269, acc: 0.9618, fr: 19.0460 Hz
+EPOCH 29 VALID) loss: 61.9961, acc: 0.9688, fr: 19.5454 Hz
+num_trial= 8
+data generated.
+(10, 256, 500, 40)
+(10, 256, 500)
+(10, 256, 500, 2)
+compile done.
+EPOCH 0 TRAIN) loss: 69.3184, acc: 0.4922, fr: 0.4163 Hz
+EPOCH 0 VALID) loss: 69.3427, acc: 0.4727, fr: 0.4312 Hz
+EPOCH 1 TRAIN) loss: 69.3240, acc: 0.4818, fr: 0.5168 Hz
+EPOCH 1 VALID) loss: 69.3408, acc: 0.5000, fr: 0.6470 Hz
+EPOCH 2 TRAIN) loss: 69.3014, acc: 0.5022, fr: 0.9249 Hz
+EPOCH 2 VALID) loss: 69.2701, acc: 0.5469, fr: 1.4466 Hz
+EPOCH 3 TRAIN) loss: 69.1260, acc: 0.5417, fr: 2.3660 Hz
+EPOCH 3 VALID) loss: 68.7987, acc: 0.5391, fr: 3.3306 Hz
+EPOCH 4 TRAIN) loss: 68.8003, acc: 0.5217, fr: 4.0836 Hz
+EPOCH 4 VALID) loss: 68.6691, acc: 0.5312, fr: 4.6228 Hz
+EPOCH 5 TRAIN) loss: 68.7663, acc: 0.5165, fr: 4.6780 Hz
+EPOCH 5 VALID) loss: 68.4822, acc: 0.5273, fr: 4.6763 Hz
+EPOCH 6 TRAIN) loss: 68.6277, acc: 0.5161, fr: 4.6145 Hz
+EPOCH 6 VALID) loss: 68.2513, acc: 0.5234, fr: 4.4038 Hz
+EPOCH 7 TRAIN) loss: 68.4441, acc: 0.5174, fr: 4.5604 Hz
+EPOCH 7 VALID) loss: 68.1402, acc: 0.5273, fr: 4.5380 Hz
+EPOCH 8 TRAIN) loss: 68.2697, acc: 0.5234, fr: 4.7710 Hz
+EPOCH 8 VALID) loss: 67.9167, acc: 0.5391, fr: 4.7826 Hz
+EPOCH 9 TRAIN) loss: 68.1348, acc: 0.5365, fr: 5.1278 Hz
+EPOCH 9 VALID) loss: 67.6507, acc: 0.5703, fr: 5.1093 Hz
+EPOCH 10 TRAIN) loss: 67.8639, acc: 0.5764, fr: 5.3759 Hz
+EPOCH 10 VALID) loss: 67.5604, acc: 0.6250, fr: 5.3585 Hz
+EPOCH 11 TRAIN) loss: 67.5437, acc: 0.6480, fr: 5.6046 Hz
+EPOCH 11 VALID) loss: 67.2946, acc: 0.7227, fr: 5.6359 Hz
+EPOCH 12 TRAIN) loss: 67.3884, acc: 0.6923, fr: 5.9294 Hz
+EPOCH 12 VALID) loss: 67.0129, acc: 0.7656, fr: 6.0587 Hz
+EPOCH 13 TRAIN) loss: 67.1205, acc: 0.7474, fr: 6.3278 Hz
+EPOCH 13 VALID) loss: 66.6218, acc: 0.8008, fr: 6.4368 Hz
+EPOCH 14 TRAIN) loss: 66.7353, acc: 0.7730, fr: 6.7042 Hz
+EPOCH 14 VALID) loss: 66.1101, acc: 0.8281, fr: 6.7847 Hz
+EPOCH 15 TRAIN) loss: 66.3427, acc: 0.7904, fr: 7.0816 Hz
+EPOCH 15 VALID) loss: 65.7992, acc: 0.8359, fr: 7.2880 Hz
+EPOCH 16 TRAIN) loss: 66.0181, acc: 0.8021, fr: 7.5339 Hz
+EPOCH 16 VALID) loss: 65.5508, acc: 0.8477, fr: 7.6759 Hz
+EPOCH 17 TRAIN) loss: 65.6764, acc: 0.8212, fr: 7.9735 Hz
+EPOCH 17 VALID) loss: 65.2469, acc: 0.8516, fr: 8.1285 Hz
+EPOCH 18 TRAIN) loss: 65.4024, acc: 0.8260, fr: 8.3922 Hz
+EPOCH 18 VALID) loss: 64.7853, acc: 0.8633, fr: 8.5223 Hz
+EPOCH 19 TRAIN) loss: 65.2095, acc: 0.8411, fr: 8.7852 Hz
+EPOCH 19 VALID) loss: 64.7429, acc: 0.8594, fr: 8.9399 Hz
+EPOCH 20 TRAIN) loss: 65.1853, acc: 0.8429, fr: 9.1871 Hz
+EPOCH 20 VALID) loss: 64.7351, acc: 0.8672, fr: 9.3228 Hz
+EPOCH 21 TRAIN) loss: 65.1598, acc: 0.8407, fr: 9.5975 Hz
+EPOCH 21 VALID) loss: 64.6737, acc: 0.8672, fr: 9.7755 Hz
+EPOCH 22 TRAIN) loss: 65.2294, acc: 0.8411, fr: 9.9649 Hz
+EPOCH 22 VALID) loss: 64.8160, acc: 0.8477, fr: 10.0597 Hz
+EPOCH 23 TRAIN) loss: 65.2568, acc: 0.8520, fr: 10.2800 Hz
+EPOCH 23 VALID) loss: 64.6515, acc: 0.8711, fr: 10.3636 Hz
+EPOCH 24 TRAIN) loss: 65.2637, acc: 0.8546, fr: 10.5388 Hz
+EPOCH 24 VALID) loss: 64.8809, acc: 0.8633, fr: 10.5799 Hz
+EPOCH 25 TRAIN) loss: 65.2904, acc: 0.8607, fr: 10.8003 Hz
+EPOCH 25 VALID) loss: 64.6232, acc: 0.8750, fr: 10.8119 Hz
+EPOCH 26 TRAIN) loss: 65.1967, acc: 0.8615, fr: 11.0415 Hz
+EPOCH 26 VALID) loss: 64.4973, acc: 0.8789, fr: 11.1297 Hz
+EPOCH 27 TRAIN) loss: 65.1880, acc: 0.8490, fr: 11.3249 Hz
+EPOCH 27 VALID) loss: 64.8292, acc: 0.8789, fr: 11.3656 Hz
+EPOCH 28 TRAIN) loss: 65.2281, acc: 0.8494, fr: 11.6389 Hz
+EPOCH 28 VALID) loss: 64.9206, acc: 0.8555, fr: 11.6862 Hz
+EPOCH 29 TRAIN) loss: 65.2593, acc: 0.8472, fr: 11.9491 Hz
+EPOCH 29 VALID) loss: 64.9711, acc: 0.8789, fr: 11.9816 Hz
+num_trial= 9

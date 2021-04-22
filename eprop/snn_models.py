@@ -109,7 +109,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     dw2 = np.zeros((nb_batch, nb_hidden, nb_outputs)) # hidden->output weight change
     dbias = np.zeros((nb_batch, nb_outputs)) # bias change
     loss = np.zeros(nb_batch) # loss value
-    
+    print("nb_batch=", nb_batch)
     for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
@@ -145,7 +145,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             v = v_new 
             
             # output update (t)
-            y_new = kappa*y + np.dot(z,w2) #!!! + bias
+            y_new = kappa*y + np.dot(z,w2) + bias #!!! + bias
             y = y_new 
             
             # eligibility trace for eij (t)
@@ -157,12 +157,13 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             
-            # eiligibility trace for eij for outpit (t)
+            # eiligibility trace for eij for output (t)
             eps_jkv = kappa*eps_jkv + z
 
             del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
-            loss[b] += 0.5*np.sum((del_y)**2)  # MSE
-            
+#            loss[b] += 0.5*np.sum((del_y)**2)   # SE
+            loss[b] += np.mean((del_y)**2)   # MSE           
+            print('loss=',loss[b])
             lsig = np.dot(del_y, B) # learning signal /// [nb_outputs],[nb_outputs,nb_hidden]-->[nb_hidden]
                 
             # (1) update recurrents

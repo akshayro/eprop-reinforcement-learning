@@ -164,7 +164,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
 #            loss[b] += 0.5*np.sum((del_y)**2)   # SE
             loss[b] += np.mean((del_y)**2)   # MSE           
-            print('loss=',loss[b])
+#            print('loss=',loss[b])
             lsig = np.dot(del_y, B) # learning signal /// [nb_outputs],[nb_outputs,nb_hidden]-->[nb_hidden]
                 
             # (1) update recurrents
@@ -277,7 +277,6 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target,cue_on,decays):
             out_rec[b,t] = y # save y
             a_rec[b,t] = a # save a
     return loss, out_rec, dw1, dwr, dw2, dbias, v_rec, z_rec, a_rec
-
 
 
 

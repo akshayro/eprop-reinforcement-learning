@@ -344,13 +344,16 @@ def lif_eprop4(w1,wr,w2,bias,B,input_data,target_y,decays):
             eij = eps_ijv*phi_j.reshape(1,-1) - beta*eps_ija*phi_j.reshape(1,-1) #!!! faster than using "outer" function
             
             # eligibility trace for eij for input->output (t)
-            epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
+#            epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
+            epsin_ijv = alpha*epsin_ijv + input_data[t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             
             # eiligibility trace for eij for output (t)
             eps_jkv = kappa*eps_jkv + z
+            
+#            del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
+            del_y = y - target_y[t]   #!!! delta_y /// [nb_outputs]    
 
-            del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
 #            loss[b] += 0.5*np.sum((del_y)**2)   # SE
             loss[b] += np.mean((del_y)**2)   # MSE           
 #            print('loss=',loss[b])

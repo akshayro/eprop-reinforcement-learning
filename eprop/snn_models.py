@@ -286,8 +286,8 @@ def lif_eprop4(w1,wr,w2,bias,B,input_data,target_y,decays):
     # regression version (see supp info P.17)
 #    nb_batch,nb_steps,nb_inputs = input_data.shape
     nb_batch = 1
-    nb_steps = input_data.shape[1]
-    nb_inputs = input_data.shape[2]
+    nb_steps = input_data.shape[0]
+    nb_inputs = input_data.shape[1]
     nb_hidden,nb_outputs = w2.shape
     lr,thr,alpha,beta,kappa,rho,t_ref = decays[0], decays[1], decays[2], decays[3], decays[4], decays[5], decays[6] # get params
     out_rec = np.zeros((nb_batch, nb_steps, nb_outputs)) # output record
@@ -299,7 +299,7 @@ def lif_eprop4(w1,wr,w2,bias,B,input_data,target_y,decays):
     dw2 = np.zeros((nb_batch, nb_hidden, nb_outputs)) # hidden->output weight change
     dbias = np.zeros((nb_batch, nb_outputs)) # bias change
     loss = np.zeros(nb_batch) # loss value
-    print("nb_batch=", nb_batch)
+
     for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)

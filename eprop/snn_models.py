@@ -193,11 +193,11 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
                 dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
             
                 # firing rate regularization
-                if t>0:
-                    sum_z += z
-                    f_ave = sum_z/(t)
-                    #print("f_ave=", np.mean(f_ave))
-                    dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t              
+                # if t>0:
+                #     sum_z += z
+                #     f_ave = sum_z/(t)
+                #     #print("f_ave=", np.mean(f_ave))
+                #     dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t              
             
                 # (2) update inputs-->recurrent
                 dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]
@@ -238,10 +238,12 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
     dw2 = np.zeros((batch_size, nb_hidden, nb_outputs)) # hidden->output weight change
     dbias = np.zeros((batch_size, nb_outputs)) # bias change
     loss = np.zeros((batch_size)) # loss value
-    sum_z = 0
-    f_ave = 0
 
     for b in nb.prange(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+
+        sum_z = np.zeros((nb_hidden,),dtype=nb.float64) # firing rate regularization
+        f_ave = np.zeros((nb_hidden,),dtype=nb.float64) # firing rate regularization
+
         syn_from_input = np.dot(input_data[b], w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
         z_bool = np.zeros((nb_hidden,),dtype=nb.boolean) # spike or not (True or False)
@@ -303,11 +305,11 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
                 dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
                 
                 # firing rate regularization
-                # if t>0:
-                #     sum_z += z
-                #     f_ave = sum_z/(t)
-                #     #print("f_ave=", np.mean(f_ave))
-                #     dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
+                if t>0:
+                    sum_z += z
+                    f_ave = sum_z/(t)
+                    #print("f_ave=", np.mean(f_ave))
+                    dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
 
                 # (2) update inputs-->recurrent
                 dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]

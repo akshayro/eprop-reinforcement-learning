@@ -103,25 +103,25 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     # firing rate regularization commented out
     
     # nb_batch,nb_steps,nb_inputs = input_data.shape
-    nb_batch = 1
+    batch_size = 1
     nb_steps = input_data.shape[0]
     nb_inputs = input_data.shape[1]
     nb_hidden,nb_outputs = w2.shape
     lr,thr,alpha,beta,kappa,rho,t_ref,c_reg,f_target = decays[0], decays[1], decays[2], decays[3], decays[4], decays[5], decays[6],decays[7],decays[8] # get params
-    out_rec = np.zeros((nb_batch, nb_steps, nb_outputs)) # output record
-    v_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden v record
-    z_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden z record
-    a_rec = np.zeros((nb_batch, nb_steps, nb_hidden)) # hidden a record
-    dw1 = np.zeros((nb_batch, nb_inputs, nb_hidden)) # input->hidden weight change
-    dwr = np.zeros((nb_batch, nb_hidden, nb_hidden)) # hidden weight change
-    dw2 = np.zeros((nb_batch, nb_hidden, nb_outputs)) # hidden->output weight change
-    dbias = np.zeros((nb_batch, nb_outputs)) # bias change
-    loss = np.zeros(nb_batch) # loss value
+    out_rec = np.zeros((batch_size, nb_steps, nb_outputs)) # output record
+    v_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden v record
+    z_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden z record
+    a_rec = np.zeros((batch_size, nb_steps, nb_hidden)) # hidden a record
+    dw1 = np.zeros((batch_size, nb_inputs, nb_hidden)) # input->hidden weight change
+    dwr = np.zeros((batch_size, nb_hidden, nb_hidden)) # hidden weight change
+    dw2 = np.zeros((batch_size, nb_hidden, nb_outputs)) # hidden->output weight change
+    dbias = np.zeros((batch_size, nb_outputs)) # bias change
+    loss = np.zeros(batch_size) # loss value
     sum_z = 0
     f_ave = 0
     
-    # for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
-    for b in range(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    # for b in nb.prange(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    for b in range(int(batch_size)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data, w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
         # z_bool = np.zeros((nb_hidden,),dtype=np.boolean) # spike or not (True or False)
@@ -305,11 +305,11 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
                 dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
                 
                 # firing rate regularization
-                if t>0:
-                    sum_z += z
-                    f_ave = sum_z/(t)
-                    #print("f_ave=", np.mean(f_ave))
-                    dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
+                # if t>0:
+                #     sum_z += z
+                #     f_ave = sum_z/(t)
+                #     #print("f_ave=", np.mean(f_ave))
+                #     dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
 
                 # (2) update inputs-->recurrent
                 dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]

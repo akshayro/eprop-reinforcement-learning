@@ -95,7 +95,7 @@ def lif_eprop(w1,wr,w2,bias,B,input_data,target_1hot,cue_on,decays):
     return loss, out_rec, dw1, dwr, dw2, dbias, v_rec, z_rec, a_rec
 
 def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
-	# "lif_eprop6" in "snn_models_backup.py"
+    # "lif_eprop6" in "snn_models_backup.py"
     #reduce to simplest case (working)
     # input_data size = (timestep, nb_neuron)
     # target_y size = (timestep, 1)
@@ -220,9 +220,9 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
 
 @nb.jit(nopython=True, parallel=True)
 def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
-	# not working yet
+    # not working yet
     # parallel version of "lif_eprop2"  
-	# OR parallel version of "lif_eprop6" in "snn_models_backup.py"
+    # OR parallel version of "lif_eprop6" in "snn_models_backup.py"
     # regression version (see supp info P.17)
     # added firing rate regularization
     

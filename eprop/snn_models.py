@@ -102,7 +102,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     # regression version (see supp info P.17)
     # firing rate regularization commented out
     
-#    nb_batch,nb_steps,nb_inputs = input_data.shape
+    # nb_batch,nb_steps,nb_inputs = input_data.shape
     nb_batch = 1
     nb_steps = input_data.shape[0]
     nb_inputs = input_data.shape[1]
@@ -120,13 +120,13 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
     sum_z = 0
     f_ave = 0
     
-#    for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
+    # for b in nb.prange(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
     for b in range(int(nb_batch)): # prarallel processing, change "nb.prange" to "range" when not using parallel
         syn_from_input = np.dot(input_data, w1) # synaptic current from input
         z = np.zeros((nb_hidden,)) # spike or not (1 or 0)
-#        z_bool = np.zeros((nb_hidden,),dtype=np.boolean) # spike or not (True or False)
+        # z_bool = np.zeros((nb_hidden,),dtype=np.boolean) # spike or not (True or False)
         z_bool = np.zeros((nb_hidden,),dtype=bool) # spike or not (True or False)        
-#        z_counts = np.zeros((nb_hidden,),dtype=np.int16) # spike count for refractory period implementation
+        # z_counts = np.zeros((nb_hidden,),dtype=np.int16) # spike count for refractory period implementation
         z_counts = np.zeros((nb_hidden,),dtype=int) # spike count for refractory period implementation
         v = np.zeros((nb_hidden,)) # voltage
         y = np.zeros((nb_outputs,)) # output
@@ -145,7 +145,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             
             # spike update (t-1)
             z_bool = v > A # find spikes
-#            print("z_bool=", z_bool)
+            # print("z_bool=", z_bool)
             z_counts[z_bool] = z_counts[z_bool] + t_ref #!!! refractory period
             nrn_ready = np.where(z_counts==0)[0] # neurons that ready to fire (no refractory period)
             
@@ -154,9 +154,9 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             phi_j[nrn_ready] = (0.3/thr)*np.maximum(0, 1-np.abs((v[nrn_ready]-A[nrn_ready])/thr)) #  /// [nb_hidden]
             
             # voltage update (t)
-#            z = z_bool.astype(nb.float64) # change data type
+            # z = z_bool.astype(nb.float64) # change data type
             z = z_bool.astype(float) # change data type            
-#            print(np.sum(z))
+            # print(np.sum(z))
             syn = syn_from_input[t] + np.dot(z,wr) # total synaptic currents /// [nb_hidden]
             v[z_bool] = A[z_bool] #!!! voltage is not larger than threshold
             v_new = alpha*v - A*z + syn # voltage update
@@ -172,7 +172,7 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             eij = eps_ijv*phi_j.reshape(1,-1) - beta*eps_ija*phi_j.reshape(1,-1) #!!! faster than using "outer" function
             
             # eligibility trace for eij for input->output (t)
-#            epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
+            # epsin_ijv = alpha*epsin_ijv + input_data[b,t].reshape(-1,1)
             epsin_ijv = alpha*epsin_ijv + input_data[t].reshape(-1,1)
             eij_in = epsin_ijv*phi_j.reshape(1,-1)
             
@@ -180,34 +180,34 @@ def lif_eprop2(w1,wr,w2,bias,B,input_data,target_y,decays):
             eps_jkv = kappa*eps_jkv + z
             
             if np.mod((t+1),100) == 0:
-#            del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
+                # del_y = y - target_y[b,t]   #!!! delta_y /// [nb_outputs]    
                 del_y = y - target_y[t]   #!!! delta_y /// [nb_outputs]    
-#            print("del_y=", del_y)
+                # print("del_y=", del_y)
                 loss[b] += 0.5*np.sum((del_y)**2)   # SE
-#            loss[b] += np.mean((del_y)**2)   # MSE
+                # loss[b] += np.mean((del_y)**2)   # MSE
 
-#            print('loss=',loss[b])
+                # print('loss=',loss[b])
                 lsig = np.dot(del_y, B) # learning signal /// [nb_outputs],[nb_outputs,nb_hidden]-->[nb_hidden]
                 
-            # (1) update recurrents
+                # (1) update recurrents
                 dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
             
-            # firing rate regularization
-#            if t>0:
-#                sum_z += z
-#                f_ave = sum_z/(t)
-#                #print("f_ave=", np.mean(f_ave))
-#                dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t              
+                # firing rate regularization
+                if t>0:
+                    sum_z += z
+                    f_ave = sum_z/(t)
+                    #print("f_ave=", np.mean(f_ave))
+                    dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t              
             
-            # (2) update inputs-->recurrent
+                # (2) update inputs-->recurrent
                 dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]
               
-            # (3) update of recurrent-->output neurons (below eq.20 in supplementary3)
+                # (3) update of recurrent-->output neurons (below eq.20 in supplementary3)
                 dw2[b] += -lr*eps_jkv.reshape(-1,1)*del_y.reshape(1,-1)
             
-            # L2 norm regularization
-            
-            # (4) bias update
+                # L2 norm regularization
+                
+                # (4) bias update
                 dbias[b] += -lr*del_y 
                 
             z_counts[z_counts>=1] = z_counts[z_counts>=1]-1 # spike count decay
@@ -303,11 +303,11 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
                 dwr[b] += -lr*lsig.reshape(1,nb_hidden)*eij # [1,nb_hidden],[nb_hidden,nb_hidden]-->[nb_hidden,nb_hidden]
                 
                 # firing rate regularization
-#               if t>0:
-#                    sum_z += z
-#                    f_ave = sum_z/(t)
-#                    #print("f_ave=", np.mean(f_ave))
-#                    dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
+                # if t>0:
+                #     sum_z += z
+                #     f_ave = sum_z/(t)
+                #     #print("f_ave=", np.mean(f_ave))
+                #     dwr[b] += lr* c_reg *(f_target - f_ave)*eij /t 
 
                 # (2) update inputs-->recurrent
                 dw1[b] += -lr*lsig.reshape(1,nb_hidden)*eij_in # [1,nb_hidden],[nb_inputs,nb_hidden]-->[nb_inputs,nb_hidden]
@@ -321,7 +321,7 @@ def lif_eprop3(w1,wr,w2,bias,B,input_data,target_y,params):
                 dbias[b] += -lr*del_y 
                 
                 loss[b] += 0.5*np.sum((del_y)**2)   # SE
-#                loss[b] += -np.sum(target_1hot[b,t]*np.log(pi+1e-10)) # cross entropy
+                # loss[b] += -np.sum(target_1hot[b,t]*np.log(pi+1e-10)) # cross entropy
                 
             z_counts[z_counts>=1] = z_counts[z_counts>=1]-1 # spike count decay
             v_rec[b,t] = v # save v

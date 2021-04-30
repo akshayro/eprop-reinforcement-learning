@@ -3,6 +3,7 @@ import scipy.spatial.distance
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 
+np.random.seed(545)
 def distance_bin(A):
     # think of the meaning of A @ A
     #
@@ -84,7 +85,7 @@ def gen_randA_dir(N,K,connectedness_in=True, connectedness_out=False):
             A[ind_r2, ind_c2] = 1
     return A    
 #################################################
-def aij_distance2d(xysize, sig, nE, nI, weight, cself=False, plot=False, randomseed=None):
+def aij_distance2d(xysize, sig, nE, nI, weight, cself=False, plot=False, randomseed=545):
     ''' directionality: column to row index '''
     # xysize,nE,nI,sig =  [2000, 1000], 80, 20, [250,150]
     # xysize,nE,nI,sig =  [20000, 5000], 8000, 2000, [250,150]
